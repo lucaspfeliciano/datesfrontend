@@ -2,7 +2,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: var(--roboto-default);
 
   .ant-menu-item-selected {
     background-color: #5bb574 !important;

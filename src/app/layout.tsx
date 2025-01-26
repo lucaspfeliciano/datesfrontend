@@ -4,20 +4,12 @@ import React, { type ReactElement } from 'react'
 
 import type { Metadata } from 'next'
 import { ConfigProvider } from 'antd'
-import { Roboto } from 'next/font/google'
 
 import Layout from '@/components/Layout'
 
 import AntdRegistry from '../lib/AntdRegistry'
 import StyledComponentsRegistry from '../lib/StyledComponentsRegistry'
 import theme from '../theme/themeConfig'
-
-const roboto = Roboto({
-  weight: ['400', '700'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  display: 'swap'
-})
 
 export const metadata: Metadata = {
   title: 'Dates',
@@ -31,7 +23,7 @@ export default function RootLayout ({
 }): ReactElement {
   return (
     <html lang="pt-br">
-      <body className={roboto.className}>
+      <body>
           <AntdRegistry>
             <ConfigProvider theme={theme}>
               <Layout>
