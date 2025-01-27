@@ -29,9 +29,9 @@ export default function Janeiro (): ReactElement {
                 </Carousel>
             </div>
             <div style={{ margin: 78 }}>
-              <h3>Date de Janeiro - 26/01/2025</h3>
+              <h2>Date de Janeiro - 26/01/2025</h2>
               <br />
-              <p>
+              <p style={{ fontSize: 20 }}>
                 Alugamos um airbnb na trindade e aprendemos a fazer um site simples,
                 <br />
                 com direito a um cafézinho, muito vinho e uma pizza para finalizar.
