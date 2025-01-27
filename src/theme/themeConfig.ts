@@ -1,9 +1,9 @@
 import type { ThemeConfig } from 'antd'
-import { Raleway } from 'next/font/google'
+import { Playfair_Display } from 'next/font/google'
 
-const butcherman = Raleway({
+const butcherman = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400']
+  weight: ['400', '700']
 })
 
 const theme: ThemeConfig = {
