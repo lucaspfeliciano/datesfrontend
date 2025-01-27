@@ -4,14 +4,14 @@
   margin: 0;
 
   .ant-menu-item-selected {
-    background-color: #5bb574 !important;
+    background-color: #8eb3e6 !important;
     padding: 0;
 
     > span {
-      color: white;
+      color: black;
 
       > svg {
-        color: white;
+        color: black;
       }
     };
 
@@ -34,5 +34,6 @@
 html,
 body {
   max-width: 100vw;
+  max-height: 100vh;
   overflow-x: hidden;
 }

@@ -13,7 +13,7 @@ import theme from '../theme/themeConfig'
 
 export const metadata: Metadata = {
   title: 'Dates',
-  description: 'Dates dos Xus'
+  description: 'DATES DOS XUS'
 }
 
 export default function RootLayout ({

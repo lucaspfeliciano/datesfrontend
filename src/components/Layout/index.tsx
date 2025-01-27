@@ -3,7 +3,8 @@
 import React, { type ReactElement, useState } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 
-import { Layout, Menu, theme } from 'antd'
+import { CalendarOutlined, HomeOutlined } from '@ant-design/icons'
+import { Image, Layout, Menu, theme } from 'antd'
 import type { MenuProps } from 'antd'
 
 const { Content, Sider, Header } = Layout
@@ -20,7 +21,8 @@ function getItem (
     key,
     icon,
     label,
-    onClick
+    onClick,
+    style: { height: '100%', fontSize: 20 }
   }
 }
 
@@ -35,27 +37,27 @@ const AppLayout = ({
   const [collapsed, setCollapsed] = useState(false)
 
   const items: MenuItem[] = [
-    getItem('Página inicial', '/home'),
-    getItem('Janeiro', '/janeiro'),
-    getItem('Fevereiro', '/fevereiro'),
-    getItem('Março', '/marco'),
-    getItem('Abril', '/abril'),
-    getItem('Maio', '/maio'),
-    getItem('Junho', '/junho'),
-    getItem('Julho', '/julho'),
-    getItem('Agosto', '/agosto'),
-    getItem('Setembro', '/setembro'),
-    getItem('Outubro', '/outubro'),
-    getItem('Novembro', '/novembro'),
-    getItem('Dezembro', '/dezembro')
+    getItem('Página inicial', '/home', <HomeOutlined />),
+    getItem('Janeiro', '/janeiro', <CalendarOutlined />),
+    getItem('Fevereiro', '/fevereiro', <CalendarOutlined />),
+    getItem('Março', '/marco', <CalendarOutlined />),
+    getItem('Abril', '/abril', <CalendarOutlined />),
+    getItem('Maio', '/maio', <CalendarOutlined />),
+    getItem('Junho', '/junho', <CalendarOutlined />),
+    getItem('Julho', '/julho', <CalendarOutlined />),
+    getItem('Agosto', '/agosto', <CalendarOutlined />),
+    getItem('Setembro', '/setembro', <CalendarOutlined />),
+    getItem('Outubro', '/outubro', <CalendarOutlined />),
+    getItem('Novembro', '/novembro', <CalendarOutlined />),
+    getItem('Dezembro', '/dezembro', <CalendarOutlined />)
   ]
 
   const {
-    token: { colorBgContainer }
+    token: { colorBgBase }
   } = theme.useToken()
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
+    <Layout style={{ maxHeight: '100vh' }}>
         <Sider
           width={260}
           style={{
@@ -76,17 +78,21 @@ const AppLayout = ({
             defaultSelectedKeys={[pathname || 'home']}
             mode="inline"
             items={items}
-            style={{ height: '100%', padding: 0 }}
+            style={{ height: '100%', padding: 0, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
             onClick={ ({ key }) => { router.push(key) }}
           />
         </Sider>
-        <Layout style={{ background: colorBgContainer, display: 'flex', flex: 1, marginLeft: 260 }}>
-        <Header style={{ height: '80px', padding: '0 80px', background: colorBgContainer, display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-
-        </Header>
-        <Content>
-            {children}
-          </Content>
+        <Layout style={{ background: colorBgBase, display: 'flex', flex: 1, marginLeft: 260, maxHeight: '100vh' }}>
+          <Header style={{ height: '80px', padding: '0 80px', background: '#8eb3e6', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
+            <Image src='/images/xuslogo.png' preview={false} width={60} />
+            <h2 style={{ color: 'white', marginLeft: 8 }}>DATES DOS XUS</h2>
+            </div>
+            <h2 style={{ color: 'white' }}>2025</h2>
+          </Header>
+          <Content style={{ maxHeight: '100vh' }}>
+              {children}
+            </Content>
         </Layout>
     </Layout>
   )
