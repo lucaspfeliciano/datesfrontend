@@ -1,7 +1,7 @@
 import type { ThemeConfig } from 'antd'
-import { Butcherman } from 'next/font/google'
+import { Raleway } from 'next/font/google'
 
-const butcherman = Butcherman({
+const butcherman = Raleway({
   subsets: ['latin'],
   weight: ['400']
 })
